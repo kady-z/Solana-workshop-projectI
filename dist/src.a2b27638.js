@@ -300,18 +300,12 @@ var process = require("process");
 var readline = require("readline");
 var rl = readline.createInterface({
   input: process.stdin,
-  ouput: process.stdout
+  output: process.stdout
 });
+console.log(process.argv);
 rl.question("Enter a string:", checkPalindrome);
 function checkPalindrome(string) {
-  var len = string.length;
-  for (var i = 0; i < len / 2; i++) {
-    if (string[i] !== string[len - 1 - i]) {
-      console.log("Not a palindrome");
-      return;
-    }
-  }
-  console.log("is palindrome");
+  if (string.split("").reverse().join() !== string) console.log("Not a palindrome");else console.log("is palindrome");
 }
 },{"readline":"node_modules/parcel-bundler/src/builtins/_empty.js","process":"node_modules/process/browser.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
